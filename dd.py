@@ -7,7 +7,7 @@ a = data.split("\n")
 
 result = []
 
-word = "improve"
+word = ""
 for y in range(len(a)):
     for x in range(len(a[0])):
         # a 가 있는 위치 찾기
