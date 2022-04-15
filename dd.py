@@ -1,20 +1,20 @@
 # 파일 읽는 부분
-with open("code.txt", "r") as f:
+with open("ik.txt", "r") as f:
     data = f.read()
 
 # 각 줄마다 자르기
-a = data.split("\n")
+n = data.split("\n")
 
 result = []
 
 word = ""
-for y in range(len(a)):
-    for x in range(len(a[0])):
+for y in range(len(n)):
+    for x in range(len(n[0])):
         # a 가 있는 위치 찾기
-        if a[y][x] == word[0]:
+        if n[y][x] == word[0]:
             # 오른쪽 가로
             check = True
-            if x + len(word) - 1 < len(a[0]):
+            if x + len(word) - 1 < len(n[0]):
                 for b in range(len(word)):
                     if a[y][x + b] != word[b]:
                         check = False
@@ -26,7 +26,7 @@ for y in range(len(a)):
             check = True
             if x - len(word) + 1 >= 0:
                 for b in range(len(word)):
-                    if a[y][x - b] != word[b]:
+                    if n[y][x - b] != word[b]:
                         check = False
                         break
                 if check:
@@ -36,7 +36,7 @@ for y in range(len(a)):
             check = True
             if y + len(word) - 1 < len(a):
                 for b in range(len(word)):
-                    if a[y + b][x] != word[b]:
+                    if n[y + b][x] != word[b]:
                         check = False
                         break
                 if check:
@@ -46,7 +46,7 @@ for y in range(len(a)):
             check = True
             if y - len(word) + 1 >= 0:
                 for b in range(len(word)):
-                    if a[y - b][x] != word[b]:
+                    if n[y - b][x] != word[b]:
                         check = False
                         break
                 if check:
